@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: dim_category
+
+    description: "Category dimension"
+    columns:
+    - name: DimCategorySk
+      data_type: long
+      constraints:
+        - type: not_null
+        - type: primary_key
+      tests:
+        - not_null
+        - unique
+    - name: category_number
+      data_type: integer
+      tests:
+        - not_null
+      constraints:
+        - type: not_null
+    - name: sm_department_number
+      data_type: integer
+    - name: ad_department_number
+      data_type: integer
+    - name: sm_superdepartment_number
+      data_type: integer
+    - name: ad_superdepartment_number
+      data_type: integer
+    - name: category_name
+      data_type: string
+    - name: sm_department_name
+      data_type: string
+    - name: sm_department_number_and_name
+      data_type: string
+      constraints:
+        - type: not_null
+    - name: ad_department_name
+      data_type: string
+    - name: ad_department_number_and_name
+      data_type: string
+      constraints:
+        - type: not_null
+    - name: sm_superdepartment_name
+      data_type: string
+    - name: sm_superdepartment_number_and_name
+      data_type: string
+      constraints:
+        - type: not_null
+    - name: ad_superdepartment_name
+      data_type: string
+    - name: ad_superdepartment_number_and_name
+      data_type: string
+      constraints:
+        - type: not_null
+    - name: ingest_timestamp
+      data_type: timestamp
+    - name: modified_timestamp
+      data_type: timestamp
+    - name: ingest_timestamp
+      data_type: timestamp
